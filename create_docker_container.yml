@@ -1,0 +1,20 @@
+--- 
+- 
+  become: true
+  hosts: all
+  tasks: 
+    - 
+      ignore_errors: true
+      name: "stop previous version docker"
+      shell: "docker stop amidemo"
+    - 
+      ignore_errors: true
+      name: "remove stopped container"
+      shell: "docker rm -f amidemo"
+    - 
+      ignore_errors: true
+      name: "remove docker images"
+      shell: "docker image rm -f ammyl/amidemo"
+    - 
+      name: "create docker image"
+      shell: "docker run -d --name amidemo -p 8080:8080 ammyl/amidemo"
