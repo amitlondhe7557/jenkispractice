@@ -5,4 +5,4 @@
   tasks: 
     - 
       name: "create docker container"
-      shell: "docker run -d --name dckerjenans_demo -p 8080:8080 ammyl/java201120222:latest"
+      shell: "docker run -d --name dckerjenans_demo -p 8080:8080 ammyl/java-app:latest"
